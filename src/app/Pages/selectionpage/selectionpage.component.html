@@ -1,0 +1,16 @@
+<h1 class="text-2xl md:max-w-4xl font-extrabold my-10">
+  Completely unstyled, fully accessible UI components, designed to integrate
+  beautifully with Tailwind CSS.
+</h1>
+<div class="grid grid-cols-3 gap-4">
+  <app-selection-menu
+    [linksrc]="'/navbar'"
+    [menu]="'navbar'"
+  ></app-selection-menu>
+  <app-selection-menu [menu]="'sidebar'"></app-selection-menu>
+  <app-selection-menu [menu]="'card'"></app-selection-menu>
+  <app-selection-menu [menu]="'modal'"></app-selection-menu>
+  <app-selection-menu [menu]="'page not found'"></app-selection-menu>
+  <app-selection-menu [menu]="'pageinate'"></app-selection-menu>
+  <app-selection-menu [menu]="'button group'"></app-selection-menu>
+</div>
