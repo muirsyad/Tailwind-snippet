@@ -1,0 +1,33 @@
+<h1 class="text-3xl font-bold my-10">Sidebar</h1>
+<app-upper-content 
+    [header]="'Simple sidebar'" 
+    [desc]="'Example of basic sidebar'"
+    (togglebut)="onEvent($event,0)"
+/>
+
+<div [ngClass]="open[0] ? '' : 'hidden' " class="bg-slate-300 border rounded-2xl h-[1000px] mb-10 relative">
+    <app-side-basic></app-side-basic>
+</div>
+<div class="flex gap-x-4 mb-5" [ngClass]="!open[0] ? '' : 'hidden' " >
+    <div (click)="togglenav('html')" class="hover:bg-slate-100 hover:cursor-pointer p-2 rounded-t-lg " [ngClass]="navbarhtml[0] ? 'border-b-4 border-black': ''"><h1>side-bar.component.html</h1></div>
+    <div (click)="togglenav('ts')" class="hover:bg-slate-100 hover:cursor-pointer p-2 rounded-t-lg active:border-b-2" [ngClass]="navts[0] ? 'border-b-4 border-black': ''" ><h1>side-bar.component.ts</h1></div>
+
+</div>
+
+<div [ngClass]="!open[0] ? '' : 'hidden' " class="relative">
+    <div [ngClass]="navbarhtml[0] ? 'block': 'hidden'">
+        <pre class="overscroll-auto "><code class="" [highlightAuto]="codets[0]" lineNumbers></code></pre>
+        <button class="absolute right-1 top-1 p-1 bg-black border" [cdkCopyToClipboard]="codets[0]"><ng-icon class="text-slate-500"  name="heroClipboard"></ng-icon></button>
+    </div>
+    <div [ngClass]="navts[0] ? 'block': 'hidden'">
+        <pre class="overscroll-auto "><code class="" [highlightAuto]="code[0]" lineNumbers></code></pre>
+        <button class="absolute right-1 top-1 p-1 bg-black border" [cdkCopyToClipboard]="code[0]"><ng-icon class="text-slate-500"  name="heroClipboard"></ng-icon></button>
+    </div>
+</div>
+
+
+<app-upper-content 
+    [header]="'Simple sidebar with accordian'" 
+    [desc]="'Example of basic sidebar'"
+    (togglebut)="onEvent($event,0)"
+/>
