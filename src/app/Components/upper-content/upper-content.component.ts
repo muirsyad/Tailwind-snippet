@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, } from '@angular/core';
+import { Component, Input,Output, EventEmitter  } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroEye,heroCodeBracket,heroClipboard } from '@ng-icons/heroicons/outline';
 
@@ -14,10 +14,18 @@ import { heroEye,heroCodeBracket,heroClipboard } from '@ng-icons/heroicons/outli
 export class UpperContentComponent {
   @Input() header!:String;
   @Input() desc!:String;
+
+  @Output() togglebut = new EventEmitter<boolean>();
+
   open:boolean = true
-  toggle(toggle:boolean){
-    this.open = !this.open;
+  toggleEvent(value: boolean) {
+    value = !value
+    this.open = !value;
+    this.togglebut.emit(value);
   }
+
+ 
+
 
 
 }

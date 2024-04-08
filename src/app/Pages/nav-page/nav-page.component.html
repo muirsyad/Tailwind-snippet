@@ -2,19 +2,21 @@
 <h1 class="text-3xl font-bold my-10">Navbars</h1>
 <app-upper-content 
     [header]="'Simple navbar with profile and setting'" 
-    [desc]="'This example also have menu in bell icon and support resposive design'">
-    </app-upper-content>
+    [desc]="'This example also have menu in bell icon and support resposive design'"
+    (togglebut)="onEvent($event,0)"
+/>
+    
 
-<div [ngClass]="open ? '' : 'hidden' " class="bg-slate-300 border rounded-2xl h-36 mb-10 relative">
+<div [ngClass]="open[0] ? '' : 'hidden' " class="bg-slate-300 border rounded-2xl h-36 mb-10 relative">
     <app-navbar></app-navbar>
 </div>
 
-<div class="flex gap-x-4 mb-5" [ngClass]="!open ? '' : 'hidden' " >
+<div class="flex gap-x-4 mb-5" [ngClass]="!open[0] ? '' : 'hidden' " >
     <div (click)="togglenav('html')" class="hover:bg-slate-100 hover:cursor-pointer p-2 rounded-t-lg " [ngClass]="navbarhtml ? 'border-b-4 border-black': ''"><h1>nav-page.component.html</h1></div>
     <div (click)="togglenav('ts')" class="hover:bg-slate-100 hover:cursor-pointer p-2 rounded-t-lg active:border-b-2" [ngClass]="navts ? 'border-b-4 border-black': ''" ><h1>nav-page.component.ts</h1></div>
 
 </div>
-<div [ngClass]="!open ? '' : 'hidden' " class="relative">
+<div [ngClass]="!open[0] ? '' : 'hidden' " class="relative">
     <div [ngClass]="navbarhtml ? 'block': 'hidden'">
         <pre class="overscroll-auto "><code class="" [highlightAuto]="codets" lineNumbers></code></pre>
         <button class="absolute right-1 top-1 p-1 bg-black border" [cdkCopyToClipboard]="codets"><ng-icon class="text-slate-500"  name="heroClipboard"></ng-icon></button>
@@ -23,18 +25,35 @@
         <pre class="overscroll-auto "><code class="" [highlightAuto]="code" lineNumbers></code></pre>
         <button class="absolute right-1 top-1 p-1 bg-black border" [cdkCopyToClipboard]="code"><ng-icon class="text-slate-500"  name="heroClipboard"></ng-icon></button>
     </div>
-    
-    <!-- <pre class="w-1/2 overscroll-auto hidden"><code class="h-[560px]" [highlightAuto]="code" lineNumbers></code></pre> -->
 </div>
 
-    <app-upper-content 
-    [header]="'Simple navbar with profile and setting Light version'" 
-    [desc]="'This example also have menu in bell icon and support resposive design'">
-    </app-upper-content>
-    <app-upper-content 
-    [header]="'Simple navbar with profile and setting Light version'" 
-    [desc]="'This example also have menu in bell icon and support resposive design'">
-    </app-upper-content>
+<app-upper-content 
+[header]="'Simple navbar with profile and setting'" 
+[desc]="'This example also have menu in bell icon and support resposive design'"
+(togglebut)="onEvent($event,1)"
+/>
+
+
+<div [ngClass]="open[1] ? '' : 'hidden' " class="bg-slate-300 border rounded-2xl h-36 mb-10 relative">
+<app-navbar-light/>
+</div>
+
+<div class="flex gap-x-4 mb-5" [ngClass]="!open[1] ? '' : 'hidden' " >
+    <div (click)="togglenav('html')" class="hover:bg-slate-100 hover:cursor-pointer p-2 rounded-t-lg " [ngClass]="navbarhtml ? 'border-b-4 border-black': ''"><h1>nav-page.component.html</h1></div>
+    <div (click)="togglenav('ts')" class="hover:bg-slate-100 hover:cursor-pointer p-2 rounded-t-lg active:border-b-2" [ngClass]="navts ? 'border-b-4 border-black': ''" ><h1>nav-page.component.ts</h1></div>
+
+</div>
+
+<div [ngClass]="!open[1] ? '' : 'hidden' " class="relative">
+    <div [ngClass]="navbarhtml ? 'block': 'hidden'">
+        <pre class="overscroll-auto "><code class="" [highlightAuto]="codehtmlar[0]" lineNumbers></code></pre>
+        <button class="absolute right-1 top-1 p-1 bg-black border" [cdkCopyToClipboard]="codets"><ng-icon class="text-slate-500"  name="heroClipboard"></ng-icon></button>
+    </div>
+    <div [ngClass]="navts ? 'block': 'hidden'">
+        <pre class="overscroll-auto "><code class="" [highlightAuto]="code" lineNumbers></code></pre>
+        <button class="absolute right-1 top-1 p-1 bg-black border" [cdkCopyToClipboard]="code"><ng-icon class="text-slate-500"  name="heroClipboard"></ng-icon></button>
+    </div>
+</div>
     
 
 

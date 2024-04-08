@@ -5,8 +5,8 @@
     <span class=" block ">{{desc}}</span>
 </div>
 <div class="bg-slate-100 flex px-2 py-1 gap-x-2 rounded-md">
-    <button (click)="toggle(true)" [ngClass]="open ? 'bg-white  border rounded-md shadow-sm ' : ''"  class="flex gap-x-2 px-5"> <ng-icon [ngClass]="open ? 'text-cyan-500' : '' " class="self-center " name="heroEye"></ng-icon> <span class="self-center">Preview</span> </button>
-    <button (click)="toggle(false)" [ngClass]="open ? '' : 'bg-white  border rounded-md shadow-sm '" class="flex gap-x-2 px-5"><ng-icon [ngClass]="open ? '' : 'text-cyan-500' " class="self-center " name="heroCodeBracket"></ng-icon> <span class="self-center">Preview</span> </button>
+    <button (click)="toggleEvent(true)"  [ngClass]="open ? 'bg-white  border rounded-md shadow-sm ' : ''"  class="flex gap-x-2 px-5"> <ng-icon [ngClass]="open ? 'text-cyan-500' : '' " class="self-center " name="heroEye"></ng-icon> <span class="self-center">Preview</span> </button>
+    <button (click)="toggleEvent(false)"  [ngClass]="open ? '' : 'bg-white  border rounded-md shadow-sm '" class="flex gap-x-2 px-5"><ng-icon [ngClass]="open ? '' : 'text-cyan-500' " class="self-center " name="heroCodeBracket"></ng-icon> <span class="self-center">Preview</span> </button>
 </div>
 
 </div>
